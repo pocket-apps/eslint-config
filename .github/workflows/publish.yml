@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish-npm:
-    name: Publish package
+    name: Publish on NPM
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,14 +18,12 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org
           scope: "@pocket-studios"
-      - name: Installing Dependencies
-        run: yarn install
-      - name: Publish NPM
+      - name: Publish
         run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   publish-github:
-    name: Publish package
+    name: Publish on Github
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,9 +34,7 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: "@pocket-studios"
-      - name: Installing Dependencies
-        run: yarn install
-      - name: Publish NPM
+      - name: Publish
         run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
