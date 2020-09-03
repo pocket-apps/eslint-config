@@ -14,9 +14,8 @@ module.exports = {
     'build',
   ],
   rules: {
+    // Imports
     'import/no-extraneous-dependencies': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
-    'consistent-return': 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'import/newline-after-import': [
@@ -37,29 +36,21 @@ module.exports = {
         ],
       },
     ],
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    'react/prop-types': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
     'unused-imports/no-unused-imports-ts': 'error',
     'unused-imports/no-unused-vars-ts': [
       'warn',
       { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
     ],
-    'comma-dangle': [
-      'error',
-      'always-multiline',
-    ],
-    'arrow-parens': 'off',
-    'object-curly-newline': [
-      'error',
-      {
-        ImportDeclaration: 'never',
-      },
-    ],
-    'react/jsx-props-no-spreading': 'off',
+    // Typescript
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
+    // React
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': [
       2,
       {
@@ -71,6 +62,12 @@ module.exports = {
         ],
       },
     ],
+    // Basics
+    'consistent-return': 'off',
+    'brace-style': ['error', 'stroustrup'],
+    'comma-dangle': ['error', 'always-multiline'],
+    'arrow-parens': 'off',
+    'object-curly-newline': ['error', { ImportDeclaration: 'never' }],
   },
   settings: {
     'import/resolver': {
@@ -88,5 +85,7 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
+    jest: true,
+    cypress: true,
   },
 };
