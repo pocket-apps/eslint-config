@@ -28,6 +28,12 @@ module.exports = {
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.ts', '.tsx'] }],
+    'react/jsx-sort-props': ['error', {
+      noSortAlphabetically: false,
+      shorthandFirst: true,
+      reservedFirst: true,
+      callbacksLast: true,
+    }],
     // Imports
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
