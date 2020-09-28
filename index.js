@@ -7,40 +7,16 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:cypress/recommended',
   ],
-  plugins: ['unused-imports'],
-  ignorePatterns: [
-    'node_modules/**/*',
-    'dist',
-    'build',
-  ],
+  plugins: ['unused-imports', 'replace-relative-imports'],
+  ignorePatterns: ['node_modules/**/*', 'dist', 'build', 'android', 'ios'],
   rules: {
-    // Imports
-    'import/no-extraneous-dependencies': 'off',
-    'import/prefer-default-export': 'off',
-    'import/extensions': 'off',
-    'import/newline-after-import': [
-      'error',
-      {
-        count: 1,
-      },
-    ],
-    'import/order': [
-      'error',
-      {
-        'newlines-between': 'never',
-        pathGroups: [
-          {
-            pattern: 'react',
-            group: 'builtin',
-          },
-        ],
-      },
-    ],
-    'unused-imports/no-unused-imports-ts': 'error',
-    'unused-imports/no-unused-vars-ts': [
-      'warn',
-      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
-    ],
+    // Basics
+    'no-unused-vars': 'off',
+    'consistent-return': 'off',
+    'brace-style': ['error', 'stroustrup'],
+    'comma-dangle': ['error', 'always-multiline'],
+    'arrow-parens': 'off',
+    'object-curly-newline': ['error', { ImportDeclaration: 'never' }],
     // Typescript
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -51,34 +27,44 @@ module.exports = {
     // React
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'react/jsx-filename-extension': [
-      2,
-      {
-        extensions: [
-          '.js',
-          '.jsx',
-          '.ts',
-          '.tsx',
-        ],
-      },
+    'react/jsx-filename-extension': ['error', { extensions: ['.ts', '.tsx'] }],
+    // Imports
+    'import/no-extraneous-dependencies': 'off',
+    'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
+    'import/newline-after-import': ['error', { count: 1 }],
+    'import/order': ['error', {
+      pathGroups: [
+        { pattern: 'react', group: 'builtin' },
+        { pattern: 'helpers', group: 'external', position: 'after' },
+        { pattern: 'typings', group: 'external', position: 'after' },
+        { pattern: 'lookups', group: 'external', position: 'after' },
+        { pattern: 'components', group: 'external', position: 'after' },
+        { pattern: 'hooks', group: 'external', position: 'after' },
+        { pattern: 'pages', group: 'external', position: 'after' },
+        { pattern: 'plugins', group: 'external', position: 'after' },
+      ],
+    }],
+    'unused-imports/no-unused-imports-ts': 'error',
+    'unused-imports/no-unused-vars-ts': [
+      'warn',
+      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
     ],
-    // Basics
-    'consistent-return': 'off',
-    'brace-style': ['error', 'stroustrup'],
-    'comma-dangle': ['error', 'always-multiline'],
-    'arrow-parens': 'off',
-    'object-curly-newline': ['error', { ImportDeclaration: 'never' }],
+    'replace-relative-imports/replace': ['error', {
+      aliases: [
+        { name: 'helpers', path: './src/helpers' },
+        { name: 'typings', path: './src/typings' },
+        { name: 'lookups', path: './src/lookups' },
+        { name: 'components', path: './src/components' },
+        { name: 'hooks', path: './src/hooks' },
+        { name: 'pages', path: './src/pages' },
+        { name: 'plugins', path: './src/plugins' },
+      ],
+    }],
   },
   settings: {
     'import/resolver': {
-      node: {
-        extensions: [
-          '.js',
-          '.jsx',
-          '.ts',
-          '.tsx',
-        ],
-      },
+      typescript: {},
     },
   },
   env: {
