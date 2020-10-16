@@ -1,6 +1,9 @@
 module.exports = {
-  extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended', 'prettier/react'],
+  extends: ['plugin:react/recommended', 'prettier/react'],
+  plugins: ['react-hooks'],
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.ts', '.tsx'] }],
