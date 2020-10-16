@@ -9,8 +9,10 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "lint": "eslint . --fix",
-    "format": "prettier --write ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "3.10.1",
