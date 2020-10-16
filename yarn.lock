@@ -59,6 +59,11 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
+"@pocket-studios/prettier-config@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@pocket-studios/prettier-config/-/prettier-config-1.0.0.tgz#83967e478efb629769f378129eb33aeb18cc3aef"
+  integrity sha512-D4SYU0kUqdnh/nZU6eCAtMLe1i0Wz3hoJQkf54uU1VXLbikCUgr81vjKWMYaay+JL4LrOX+Od5SpMp9GcGT5Vw==
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
