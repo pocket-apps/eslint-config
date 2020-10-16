@@ -6,16 +6,14 @@ module.exports = {
     },
   },
   rules: {
-    'padding-line-between-statements': [
-      'error',
-      { blankLine: 'never', prev: 'import', next: 'import' },
-    ],
+    'padding-line-between-statements': ['error', { blankLine: 'never', prev: 'import', next: 'import' }],
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'import/newline-after-import': ['error', { count: 1 }],
     'import/order': [
-      'error', {
+      'error',
+      {
         pathGroups: [
           { pattern: 'react', group: 'builtin' },
           { pattern: 'helpers', group: 'external', position: 'after' },
@@ -33,11 +31,15 @@ module.exports = {
     'unused-imports/no-unused-vars-ts': [
       'warn',
       {
-        vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_',
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
       },
     ],
     'replace-relative-imports/replace': [
-      'error', {
+      'error',
+      {
         aliases: [
           { name: 'helpers', path: './src/helpers' },
           { name: 'typings', path: './src/typings' },
@@ -50,4 +52,4 @@ module.exports = {
       },
     ],
   },
-};
+}

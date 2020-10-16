@@ -17,4 +17,4 @@ module.exports = {
     'array-element-newline': ['error', 'consistent'],
     'array-bracket-newline': ['error', { multiline: true }],
   },
-};
+}
