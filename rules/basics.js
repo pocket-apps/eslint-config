@@ -1,5 +1,6 @@
 module.exports = {
-  extends: ['airbnb-base'],
+  extends: ['airbnb-base', 'plugin:fp/recommended'],
+  plugins: ['fp'],
   ignorePatterns: ['node_modules/**/*', 'dist', 'build', 'android', 'ios'],
   env: {
     browser: true,
@@ -16,5 +17,9 @@ module.exports = {
     'object-curly-newline': ['error', { consistent: true }],
     'array-element-newline': ['error', 'consistent'],
     'array-bracket-newline': ['error', { multiline: true }],
+    'fp/no-mutation': ['error', { commonjs: true }],
+    'fp/no-unused-expression': 'off',
+    'fp/no-throw': 'off',
+    'fp/no-rest-parameters': 'off',
   },
 }
