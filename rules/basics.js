@@ -21,5 +21,6 @@ module.exports = {
     'fp/no-unused-expression': 'off',
     'fp/no-throw': 'off',
     'fp/no-rest-parameters': 'off',
+    'fp/no-nil': 'off',
   },
 }
