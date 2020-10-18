@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['airbnb-base'],
   plugins: ['fp'],
-  ignorePatterns: ['node_modules/**/*', 'dist', 'build', 'android', 'ios'],
+  ignorePatterns: ['node_modules/**/*', 'dist', 'build', 'android', 'ios', 'public'],
   env: {
     browser: true,
     node: true,
