@@ -6,5 +6,7 @@ module.exports = {
     'plugin:testing-library/react',
     'plugin:jest-dom/recommended',
   ],
-  rules: {},
+  rules: {
+    'cypress/no-unnecessary-waiting': 'off',
+  },
 }
