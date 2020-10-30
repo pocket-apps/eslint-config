@@ -8,5 +8,6 @@ module.exports = {
   ],
   rules: {
     'cypress/no-unnecessary-waiting': 'off',
+    'jest/expect-expect': 'off',
   },
 }
