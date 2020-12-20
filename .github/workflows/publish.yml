@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Update Version
-        uses: pocket-studios/action-update-version@v1
+        uses: pocket-apps/action-update-version@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           version-regexp: '\d+.\d+.\d+(-\w+)?'
@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-          scope: '@pocket-studios'
+          scope: '@pocket-apps'
       - name: Install Dependencies
         run: yarn install
       - name: Publish
@@ -50,7 +50,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@pocket-studios'
+          scope: '@pocket-apps'
       - name: Install Dependencies
         run: yarn install
       - name: Publish
